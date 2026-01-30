@@ -1,44 +1,42 @@
 function selectoption(option) {
     if (option === 'yes') {
-        document.getelementbyid('question').style.display = 'none';
+        document.getElementById('question').style.display = 'none';
         displaycatheart();
-    } 
-    else if (option === 'no') {
-        document.getelementbyid('no-button').innertext = 'you sure?';
+    } else if (option === 'no') {
+        document.getElementById('no-button').innerText = 'you sure?';
 
-        var yesbutton = document.getelementbyid('yes-button');
-        var currentfontsize = window.getcomputedstyle(yesbutton).getpropertyvalue('font-size');
-        var newsize = parsefloat(currentfontsize) * 2;
-        yesbutton.style.fontsize = newsize + 'px';
-    } 
-    else {
+        var yesButton = document.getElementById('yes-button');
+        var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
+        var newSize = parseFloat(currentFontSize) * 2;
+        yesButton.style.fontSize = newSize + 'px';
+    } else {
         alert('invalid option!');
     }
 }
 
 function displaycat() {
-    var imagecontainer = document.getelementbyid('image-container');
-    var catimage = new image();
+    var imageContainer = document.getElementById('image-container');
+    var catImage = new Image();
 
-    catimage.src = 'cat.gif';
-    catimage.alt = 'cat';
+    catImage.src = 'cat.gif';
+    catImage.alt = 'cat';
 
-    catimage.onload = function () {
-        imagecontainer.appendchild(catimage);
+    catImage.onload = function () {
+        imageContainer.appendChild(catImage);
     };
 }
 
 function displaycatheart() {
-    document.getelementbyid('image-container').innerhtml = '';
-    var imagecontainer = document.getelementbyid('image-container');
-    var catheartimage = new image();
+    var imageContainer = document.getElementById('image-container');
+    imageContainer.innerHTML = '';
+    var catHeartImage = new Image();
 
-    catheartimage.src = 'cat-heart.gif';
-    catheartimage.alt = 'cat heart';
+    catHeartImage.src = 'cat-heart.gif';
+    catHeartImage.alt = 'cat heart';
 
-    catheartimage.onload = function () {
-        imagecontainer.appendchild(catheartimage);
-        document.getelementbyid('options').style.display = 'none';
+    catHeartImage.onload = function () {
+        imageContainer.appendChild(catHeartImage);
+        document.getElementById('options').style.display = 'none';
     };
 }
 
